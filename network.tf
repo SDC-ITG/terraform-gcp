@@ -11,7 +11,7 @@ resource "google_compute_network" "vpc_network" {
 resource "google_compute_subnetwork" "pub_subnet" {
   name          = "sub-terraform"
   ip_cidr_range = "192.168.0.0/26"
-  network       = google_compute_network.vpc.name
+  network       = google_compute_network.vpc_network.name
   description   = "public subnet"
   region        = "asia-northeast1"
 }
@@ -19,7 +19,7 @@ resource "google_compute_subnetwork" "pub_subnet" {
 # Firewall
 resource "google_compute_firewall" "firewall" {
   name          = "fw-terraform"
-  network       = google_compute_network.vpc.name
+  network       = google_compute_network.vpc_network.name
   direction     = "INGRESS"
   source_ranges = ["0.0.0.0/0"]
   allow {

@@ -3,7 +3,7 @@
 ##----------------------------------------------------------------------
 
 # Compute Engine
-resource "google_compute_instance" "instance1" {
+resource "google_compute_instance" "instance2" {
   name         = "terraform-test2"
   machine_type = "e2-micro"
   zone         = "asia-northeast1-a"

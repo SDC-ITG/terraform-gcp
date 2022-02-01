@@ -4,6 +4,7 @@
 
 # Compute Engine
 
+
 resource "google_compute_instance" "instance1" {
   name         = "terraform-test1"
   machine_type = "e2-micro"
